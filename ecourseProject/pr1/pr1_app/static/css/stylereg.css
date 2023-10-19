@@ -1,0 +1,30 @@
+
+#parentdiv{
+    width: 100%;
+    height: min-content;
+    padding-left: 3rem;
+    padding-right: 1rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .form1{
+        width: 50%;
+        padding: 15px;
+        /* margin-right: 0.2rem; */
+    }
+    .child2{
+        width: 50%;
+        height: 100vh;
+        display: flex;
+        justify-content: end;
+        align-items: end;
+
+        .img2{
+            height: 38rem;
+            width: 100%;
+            border-radius: 0.5rem;
+        }
+    }
+}

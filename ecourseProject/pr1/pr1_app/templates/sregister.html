@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '/css/stylereg.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+<body>
+    <div id="parentdiv" class="border-top">
+        <div class="form1">
+            <form action="" method="POST">
+                {% csrf_token %}
+
+                <h1 class="lh-lg h1">Welcome <span class="text-danger px-2"><i> "{{ user.username }}" </i></span> </h1>
+
+                <label for="name" class="fw-bold">Name:</label>
+                <input type="text" name="name" id="name" placeholder="Name of Student" class="form-control mb-4">
+
+                <label for="parent" class="fw-bold">Parent or Guardian:</label>
+                <input type="text" name="parent" id="parent" placeholder="Name of Parent" class="form-control mb-4">
+
+                {% comment %} <label for="dob" class="fw-bold">Date of Birth:</label>
+                <input type="date" name="dob" id="dob" class="form-control mb-4"> {% endcomment %}
+
+                <label for="tel" class="fw-bold">Contact No:</label>
+                <input type="tel" name="tel" id="tel"  maxlength="12" class="form-control mb-4">
+
+                {% comment %} <label for="std" class="fw-bold">Standard:</label>
+                <input type="number" name="std" id="std" class="form-control mb-4" max=12> {% endcomment %}
+
+                <label for="course" class="fw-bold">Course:</label>
+                <input list="courses" name="course" id="course" placeholder="Select Your course" class="form-control  mb-4">
+                    <datalist id="courses">
+                        <option value="Web Design">
+                        <option value="Web Development">
+                        <option value="Game Design">
+                        <option value="App Design">
+                        <option value="Digital Marketing">
+                        <option value="Research">
+                        <option value="Content Writing">
+                        <option value="SEO">
+                    </datalist>
+
+                <label for="adrs" class="fw-bold">Home Address:</label>
+                <input type="text" name="adrs" id="adrs" placeholder="Permenant Address" class="form-control mb-4">
+
+                <label for="district" class="fw-bold">District:</label>
+                <input list="districts" name="district" id="district" placeholder="Select Your District" class="form-control  mb-4">
+                    <datalist id="districts">
+                        <option value="Kasaragod">
+                        <option value="Kannur">
+                        <option value="Calicut">
+                        <option value="Malappuram">
+                        <option value="Wayanad">
+                        <option value="Palakkad">
+                    </datalist>
+
+                <input type="submit" onclick="alert('This Data will be submitted')" value="submit" name="submit" class="form-control btn btn-outline-primary mb-4 fw-bold  border-2">
+                <a href="showlist" class="mb-4">
+                    <input type="button" value="view/update" name="showlist" class="form-control btn btn-outline-success fw-bold ">
+                </a>
+            </form>  
+        </div>
+        <div class="child2">
+            <img src="{% static '/img/pexels-august-de-richelieu-4260481.jpg' %}" alt="register image" class="img2">
+        </div>
+    </div>
+    <div class="h-25">
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+{% endblock  %}
+

@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ECOURSES - Online Courses HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="{% static 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap' %}" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css' %}" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class=" d-lg-block">
+        <div class="d-flex justify-content-between border-bottom shadow-sm mb-5 align-items-center py-3 px-4">
+            <div class="col-lg-3">
+                <a href="/index" class="text-decoration-none">
+                    <h1 class="m-0"><span class="text-primary">E</span>COURSES</h1>
+                </a>
+            </div>
+            {% if user.is_authenticated %}
+            <a href="{% url 'logout1' %}">
+                <input type="button" name="logout1" value="Logout" class="btn btn-outline-danger">
+            </a>
+            {% endif %}
+        </div>
+        
+
+    </div>
+    <!-- Topbar End -->
+
+    {% block content %}
+    
+
+    
+    {% endblock %}
+
+
+
+    <!-- Footer Start -->
+    
